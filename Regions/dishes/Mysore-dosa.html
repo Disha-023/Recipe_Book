@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mysore Masala Dosa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive;
+            background-image: url('../../images/karnataka.png');
+
+            background-size: 100% 100%;
+            background-attachment: fixed;
+
+
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+            
+            border-radius: 20px;
+           
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            color: #8B0000;
+        }
+
+        .dish-img {
+            display: block;
+            margin: auto;
+            width: 450px;
+
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-top: 2rem;
+            font-size: 30px;
+
+            text-align: center;
+            font-family: "Merienda", cursive;
+        }
+
+        ul {
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .steps {
+            counter-reset: step;
+        }
+
+        .steps li::before {
+            counter-increment: step;
+            content: "Step " counter(step) ": ";
+            font-weight: bold;
+            color: #B22222;
+        }
+
+        .spice-meter {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #B22222;
+        }
+
+        .spice-meter input[type=range] {
+            width: 200px;
+            accent-color: red;
+            margin-top: 10px;
+        }
+
+        .spice-meter #spiceLabel {
+            margin-top: 10px;
+            font-size: 3rem;
+            color: #8B0000;
+            font-family: 'Merienda', cursive;
+        }
+        .fav-btn {
+            background-color: #ffecd1;
+            color: #d13a3a;
+            border: 2px solid #d13a3a;
+
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 30px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fav-btn:hover {
+            background-color: #d13a3a;
+            color: #fff0e3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Mysore Masala Dosa</h1>
+        <img src="https://i.pinimg.com/736x/2a/c1/51/2ac15169850a766390adcba3a6d28eef.jpg" alt="Mysore Masala Dosa"
+            class="dish-img" />
+<div class="button" style="text-align: center;">
+            <button class="fav-btn" data-title="Mysore-dosa" data-link="Mysore-dosa.html"
+                data-image="https://i.pinimg.com/736x/2a/c1/51/2ac15169850a766390adcba3a6d28eef.jpg"
+                data-description="Mysore-dosa">
+                ❤️ Add to Favourites
+            </button>
+        </div>
+        
+        <div class="section">
+          
+           <h2>🌾 Ingredients</h2>
+<ul>
+  <li>Fermented dosa batter</li>
+  <li>Boiled & mashed potatoes</li>
+  <li>Chopped onions, green chilies, and ginger</li>
+  <li>Mustard seeds, curry leaves</li>
+  <li>Butter or ghee</li>
+  <li>Spicy garlic chutney (red chutney)</li>
+</ul>
+        </div>
+
+        <div class="section">
+           <h2>🧑‍🍳 Procedure</h2>
+<ul class="steps">
+  <li>Heat a tawa and spread dosa batter in a thin circle.</li>
+  <li>Spread spicy red chutney and a little butter on top.</li>
+  <li>Add potato masala in the center.</li>
+  <li>Fold the dosa and cook until golden and crispy.</li>
+  <li>Serve hot with coconut chutney and sambar.</li>
+</ul>
+            <div class="section spice-meter">
+                <h2 style="font-size: 4rem;">🌶️ Spice Meter</h2>
+                <input type="range" id="spiceRange" min="1" max="5" value="4" />
+                <div id="spiceLabel">Spicy 🌶️🌶️🌶️</div>
+            </div>
+
+        </div>
+        <script>
+            const spiceRange = document.getElementById('spiceRange');
+            const spiceLabel = document.getElementById('spiceLabel');
+
+            function updateSpiceLabel(val) {
+                if (val == 1) spiceLabel.textContent = 'Mild 🌶️';
+                else if (val == 2) spiceLabel.textContent = 'Mild-Medium 🌶️🌶️';
+                else if (val == 3) spiceLabel.textContent = 'Medium 🌶️🌶️🌶️';
+                else if (val == 4) spiceLabel.textContent = 'Spicy 🌶️🌶️🌶️🌶️';
+                else if (val == 5) spiceLabel.textContent = 'Extra Spicy 🌶️🌶️🌶️🌶️🌶️';
+            }
+
+            updateSpiceLabel(spiceRange.value);
+          
+            spiceRange.addEventListener('input', () => {
+                updateSpiceLabel(spiceRange.value);
+            });
+            
+            //  Favourites
+            const favBtns = document.querySelectorAll('.fav-btn');
+
+            favBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const title = btn.getAttribute('data-title');
+                    const link = btn.getAttribute('data-link');
+                    const image = btn.getAttribute('data-image');
+                    const description = btn.getAttribute('data-description');
+
+                   
+                    if (!title || !link) {
+                        console.warn("Skipping null or undefined recipe data");
+                        return;
+                    }
+
+                    const recipe = {
+                        title,
+                        link,
+                        image: image || "default-image.jpg",
+                        description: description || "No description"
+                    };
+
+                    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+                    const exists = favourites.some(r => r.title === recipe.title);
+                    if (!exists) {
+                        favourites.push(recipe);
+                        localStorage.setItem('favourites', JSON.stringify(favourites));
+                        alert(`${title} added to favourites!`);
+                    } else {
+                        alert(`${title} is already in your favourites.`);
+                    }
+                });
+            });
+
+        </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .pot-wrapper {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      width: 350px;
+      margin: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .pot-link {
+      position: relative;
+      width: 200px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .pot-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+
+    .pot {
+      width: 320px;
+      margin: 1rem;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+
+    .pot:hover {
+      transform: scale(1.1);
+    }
+
+    .dishName {
+      position: absolute;
+      top: 58%;
+      left: 51%;
+      transform: translate(-50%, -50%);
+      background-color: 0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 20px;
+      font-family: "Merienda", cursive;
+      color: white;
+
+    }
+
+    .toran {
+      height: 180px;
+    }
+
+    #leaves {
+      height: 850px;
+      width: 1575px;
+      background-size: contain;
+    }
+
+    #heading {
+      text-align: center;
+      font-family: Dancing Script, cursive;
+      font-size: 70px;
+      color: #8b1558;
+      margin-top: 60px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="toran">
+    <img id="leaves"
+      src="https://png.pngtree.com/png-clipart/20230425/original/pngtree-merigold-flower-wedding-toran-design-png-image_9094116.png"
+      alt="toran">
+  </div>
+
+  <div class="dishes">
+    <h2 id="heading">Traditional Dishes from Punjab</h2>
+    <div class="pot-container">
+
+      <a href="../dishes/sarson-saag.html" class="pot-wrapper">
+        <img src="../../images/pot1.png" alt="Sarson da Saag" class="pot" />
+        <div class="dishName">Sarson da Saag</div>
+      </a>
+
+
+
+      <a href="../dishes/chole.html" class="pot-wrapper">
+        <img src="../../images/pot1.png" alt="Chole" class="pot" />
+        <div class="dishName">Chole</div>
+      </a>
+
+      <a href="../dishes/Paneer.html" class="pot-wrapper">
+        <img src="../../images/pot1.png" alt="Paneer Tikka" class="pot" />
+        <div class="dishName">Paneer Tikka</div>
+
+      </a>
+
+
+
+      <a href="../dishes/Rajma.html" class="pot-wrapper">
+        <img src="../../images/pot1.png" alt="Rajma" class="pot" />
+        <div class="dishName">Rajma</div>
+      </a>
+
+    </div>
+  </div>
+</body>
+
+</html>

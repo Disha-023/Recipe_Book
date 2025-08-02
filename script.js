@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const dishname = document.getElementById("dishName");
     const timelineItems = document.querySelectorAll('.timeline-item');
 
+    //Thali
     const dishes =[
         "Khichdi – A wholesome mix of lentils and rice.",
     "Idli & Sambar – Steamed comfort with a spicy twist.",
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
        
 
-
+//timeline
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
